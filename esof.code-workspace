@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "path": "." },
+    { "path": "billing-service" },
+    { "path": "sale-off-service" },
+    { "path": "sorting-service" }
+  ],
+  "settings": {}
+}
