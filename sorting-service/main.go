@@ -8,13 +8,11 @@ import (
 
 func main() {
 
-	values := [][]int{
-		{10, 9, 8, 7, 6, 5, 4, 3, 2, 1},
-		{15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1},
-	}
+	requestA := []int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
+	requestB := []int{15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
 
-	firstOperation := handlers.SortingHandlerCMD(values[0])
-	sectionOperation := handlers.SortingHandlerCMD(values[1])
+	firstOperation := handlers.SortingHandlerCMD(requestA)
+	sectionOperation := handlers.SortingHandlerCMD(requestB)
 
 	showOperations(firstOperation, sectionOperation)
 }
