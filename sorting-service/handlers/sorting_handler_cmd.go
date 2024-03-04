@@ -1,23 +1,19 @@
 package handlers
 
 import (
-	"sorting-service/service/content"
+	"sorting-service/service/collection"
 	"sorting-service/service/sort"
 )
 
-func SortingHandlerCMD(input [][]int) []*content.Content {
-	var contents []*content.Content
-	for _, values := range input {
-		content := content.NewContent(values)
+func SortingHandlerCMD(values []int) *collection.Collection {
 
-		// NOTE: Setting the sorting strategy based on content vector length
-		if len(values) <= 10 {
-			content.SetSortAlgo(sort.NewBubbleSortStrategy(content))
-		} else {
-			content.SetSortAlgo(sort.NewQuickSortSrategy(content))
-		}
+	col := collection.NewContent(values)
 
-		contents = append(contents, content)
+	// NOTE: Setting the sorting strategy based on content vector length
+	if len(values) <= 10 {
+		col.SetSortAlgo(sort.NewBubbleSortStrategy(col))
+	} else {
+		col.SetSortAlgo(sort.NewQuickSortSrategy(col))
 	}
-	return contents
+	return col
 }

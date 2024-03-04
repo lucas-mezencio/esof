@@ -2,10 +2,10 @@ package sort
 
 import (
 	"fmt"
-	"sorting-service/service/content"
+	"sorting-service/service/collection"
 )
 
-var _ content.Sorter = (*QuickSort)(nil)
+var _ collection.Sorter = (*QuickSort)(nil)
 
 // QuickSort concrete strategy
 type QuickSort struct {
@@ -14,7 +14,7 @@ type QuickSort struct {
 	finish int
 }
 
-func NewQuickSortSrategy(c *content.Content) *QuickSort {
+func NewQuickSortSrategy(c *collection.Collection) *QuickSort {
 	return &QuickSort{
 		v:      c.GetValue(),
 		start:  0,

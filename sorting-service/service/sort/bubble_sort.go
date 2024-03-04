@@ -2,17 +2,17 @@ package sort
 
 import (
 	"fmt"
-	"sorting-service/service/content"
+	"sorting-service/service/collection"
 )
 
-var _ content.Sorter = (*BubbleSort)(nil)
+var _ collection.Sorter = (*BubbleSort)(nil)
 
 // BubbleSort concrete strategy
 type BubbleSort struct {
 	v []int
 }
 
-func NewBubbleSortStrategy(c *content.Content) *BubbleSort {
+func NewBubbleSortStrategy(c *collection.Collection) *BubbleSort {
 	return &BubbleSort{
 		v: c.GetValue(),
 	}
